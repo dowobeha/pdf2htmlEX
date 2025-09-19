@@ -1,4 +1,4 @@
-FROM swift:bookworm
+FROM pdf2htmlex/pdf2htmlex:latest
 
 ARG USERNAME=vscode
 ARG USER_UID=1000
@@ -15,25 +15,3 @@ RUN groupadd --gid $USER_GID $USERNAME \
 
 # [Optional] Set the default user. Omit if you want to keep the default as root.
 USER $USERNAME
-
-RUN apt-get -y install --no-install-recommends git
-RUN apt-get -y install --no-install-recommends curl
-RUN apt-get -y install --no-install-recommends wget
-RUN apt-get -y install --no-install-recommends make
-RUN apt-get -y install --no-install-recommends g++
-RUN apt-get -y install --no-install-recommends pkg-config
-RUN apt-get -y install --no-install-recommends cmake
-RUN apt-get -y install --no-install-recommends autoconf
-RUN apt-get -y install --no-install-recommends automake
-RUN apt-get -y install --no-install-recommends libtool
-RUN apt-get -y install --no-install-recommends dpkg-dev
-RUN apt-get -y install --no-install-recommends fontforge
-RUN apt-get -y install --no-install-recommends poppler-utils
-RUN apt-get -y install --no-install-recommends libpng-dev
-RUN apt-get -y install --no-install-recommends zlib1g-dev
-RUN apt-get -y install --no-install-recommends libfreetype6-dev
-RUN apt-get -y install --no-install-recommends libjpeg-dev
-RUN apt-get -y install --no-install-recommends libopenjp2-7-dev
-RUN apt-get -y install --no-install-recommends libxml2-dev
-RUN apt-get -y install --no-install-recommends gettext
-RUN apt-get -y install --no-install-recommends jq
