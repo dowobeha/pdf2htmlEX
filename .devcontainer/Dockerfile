@@ -16,8 +16,6 @@ RUN groupadd --gid $USER_GID $USERNAME \
 # [Optional] Set the default user. Omit if you want to keep the default as root.
 USER $USERNAME
 
-RUN apt-get update
-
 RUN apt-get -y install --no-install-recommends git
 RUN apt-get -y install --no-install-recommends curl
 RUN apt-get -y install --no-install-recommends wget
