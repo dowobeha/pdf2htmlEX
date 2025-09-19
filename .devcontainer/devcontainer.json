@@ -1,12 +1,17 @@
 {
-  "name": "My Codespace Container",
-  "build": {
-    "dockerfile": "Dockerfile"
-  },
-  "settings": {
-    "terminal.integrated.shell.linux": "/bin/bash"
-  },
-  "forwardPorts": [],
-  "postCreateCommand": "echo 'Container ready!'",
-  "remoteUser": "vscode"
+	"build": {
+		"dockerfile": "./Dockerfile",
+		"context": "."
+	},
+	"remoteUser": "vscode",
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"sswg.swift-lang"
+			]
+		}
+	},
+	"containerEnv": {
+        	"SHELL": "/bin/bash"
+	}
 }
