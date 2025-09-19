@@ -1,4 +1,4 @@
-FROM pdf2htmlex/pdf2htmlex:latest
+FROM pdf2htmlex/pdf2htmlex
 
 ARG USERNAME=vscode
 ARG USER_UID=1000
