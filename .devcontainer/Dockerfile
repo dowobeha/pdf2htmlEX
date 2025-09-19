@@ -16,14 +16,18 @@ RUN groupadd --gid $USER_GID $USERNAME \
 # [Optional] Set the default user. Omit if you want to keep the default as root.
 USER $USERNAME
 
+RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
+     && apt-get -y install --no-install-recommends          \
+            git curl wget make g++ pkg-config cmake      \
+            autoconf automake libtool dpkg-dev           \
+            fontforge poppler-utils                      \
+            libpng-dev zlib1g-dev libfreetype6-dev       \
+            libjpeg-dev libopenjp2-7-dev                 \
+            libxml2-dev gettext jq
+
 # Core packages needed only at build-time + runtime libs
 #RUN apt update && apt install -y \
-#    git curl wget make g++ pkg-config cmake \
-#    autoconf automake libtool dpkg-dev           \
-#    fontforge poppler-utils                      \
-#    libpng-dev zlib1g-dev libfreetype6-dev       \
-#    libjpeg-dev libopenjp2-7-dev                 \
-#    libxml2-dev gettext jq
+
 
 #WORKDIR /app
 
